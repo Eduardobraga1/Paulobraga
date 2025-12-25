@@ -1,0 +1,44 @@
+import { NextResponse } from 'next/server'
+import { getServerSession } from 'next-auth'
+import { authOptions } from '@/lib/auth'
+import { prisma } from '@/lib/prisma'
+
+export async function GET() {
+  try {
+    const session = await getServerSession(authOptions)
+    
+    if (!session?.user?.id) {
+      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
+    }
+
+    const responses = await prisma.response.findMany({
+      where: {
+        lesson: {
+          teacherId: session.user.id
+        }
+      },
+      include: {
+        student: {
+          select: {
+            name: true,
+            phone: true,
+          }
+        },
+        lesson: {
+          select: {
+            title: true,
+          }
+        }
+      },
+      orderBy: { createdAt: 'desc' },
+    })
+
+    return NextResponse.json(responses)
+  } catch (error) {
+    console.error('Error fetching responses:', error)
+    return NextResponse.json(
+      { error: 'Failed to fetch responses' },
+      { status: 500 }
+    )
+  }
+}
