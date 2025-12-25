@@ -1,7 +1,13 @@
 import { anatomyLessons } from "./anatomyLessons";
-// import outras categorias no futuro
+import { patientInteractionsLessons } from "./patientInteractionsLessons";
+import { emergencyLessons } from "./emergencyLessons";
+import { pharmacologyLessons } from "./pharmacologyLessons";
+import { diagnosticLessons } from "./diagnosticLessons";
 
 export const allLessons = [
   ...anatomyLessons,
-  // ...otherCategories
+  ...patientInteractionsLessons,
+  ...emergencyLessons,
+  ...pharmacologyLessons,
+  ...diagnosticLessons,
 ];
