@@ -1,71 +1,135 @@
-# Paulo Braga - Construção Civil
+# 🏥 Medical English Learning App
 
-Site profissional desenvolvido com Next.js, React e Tailwind CSS com componentes shadcn/ui.
+## 🚀 Como Rodar no Seu Computador (Mac)
 
-## 🚀 Características
+### **PASSO 1: Baixar os arquivos**
 
-- ✅ Design moderno e responsivo (mobile/desktop)
-- ✅ Integração direta com WhatsApp para orçamentos
-- ✅ Múltiplas seções informativas
-- ✅ Botão flutuante do WhatsApp
-- ✅ Cores sofisticadas e profissionais
-- ✅ Performance otimizada com Next.js 14
+Você precisa ter os arquivos do projeto no seu Mac. Se você está usando o Cursor com workspace remoto, você precisa:
 
-## 📦 Instalação
+1. **Salvar/baixar** o projeto completo do Cursor para uma pasta local no seu Mac
+
+OU
+
+2. **Clonar** do repositório git (se estiver versionado)
+
+---
+
+### **PASSO 2: Abrir o Terminal no Mac**
+
+1. Abra o **Terminal** (Aplicativos → Utilitários → Terminal)
+2. Navegue até a pasta do projeto:
 
 ```bash
-# Instalar dependências
+cd /caminho/para/a/pasta/do/projeto
+```
+
+---
+
+### **PASSO 3: Instalar dependências**
+
+No terminal, execute:
+
+```bash
 npm install
+```
 
-# Rodar em modo desenvolvimento
+Aguarde a instalação completar (pode demorar 1-2 minutos).
+
+---
+
+### **PASSO 4: Iniciar o servidor**
+
+```bash
 npm run dev
-
-# Build para produção
-npm run build
-
-# Rodar em produção
-npm start
 ```
 
-## ⚙️ Configuração
+Você verá algo como:
 
-### WhatsApp
-Edite o arquivo `app/page.tsx` e altere o número do WhatsApp:
-
-```typescript
-const whatsappNumber = "5511999999999"; // Substitua pelo seu número
+```
+✓ Ready in 1s
+- Local:    http://localhost:3000
 ```
 
-### Informações de Contato
-Edite também no arquivo `app/page.tsx`:
-- Telefone
-- E-mail
-- Localização
+---
 
-### Cores e Estilo
-As cores podem ser personalizadas no arquivo `app/globals.css` nas variáveis CSS.
+### **PASSO 5: Abrir no navegador**
 
-## 📱 Seções do Site
+Abra seu navegador e acesse:
 
-1. **Header** - Navegação fixa com botão de orçamento
-2. **Hero** - Seção principal com chamada para ação
-3. **Serviços** - Grid com 6 serviços principais
-4. **Diferenciais** - Benefícios da empresa
-5. **Contato** - Formas de contato (WhatsApp, telefone, e-mail)
-6. **CTA Final** - Chamada para ação destacada
-7. **Footer** - Rodapé informativo
-8. **Botão Flutuante** - WhatsApp fixo no canto inferior direito
+```
+http://localhost:3000/learn
+```
 
-## 🎨 Tecnologias
+---
 
-- Next.js 14
-- React 18
-- TypeScript
-- Tailwind CSS
-- shadcn/ui
-- Lucide Icons
+## 📁 Estrutura do Projeto
 
-## 📄 Licença
+```
+workspace/
+├── app/
+│   ├── page.tsx              (Home)
+│   ├── learn/page.tsx        (Dashboard principal)
+│   ├── lesson/[id]/page.tsx  (Página de lição)
+│   └── layout.tsx
+├── components/
+│   ├── exercises/            (4 tipos de exercícios)
+│   ├── LessonView.tsx
+│   └── ui/
+├── lib/
+│   ├── data/                 (30 lições + exercícios)
+│   └── contexts/             (Sistema de progresso)
+└── package.json
+```
 
-Este projeto está sob a licença MIT.
+---
 
+## ✅ Requisitos
+
+- Node.js 18+ instalado
+- npm ou yarn
+
+---
+
+## 🎯 URLs do App
+
+Depois de rodar `npm run dev`:
+
+- 🏠 **Home**: `http://localhost:3000`
+- 📚 **Dashboard**: `http://localhost:3000/learn` ← **COMECE AQUI**
+- 🎮 **Lição exemplo**: `http://localhost:3000/lesson/anatomy-1`
+- 🔍 **Ver todas**: `http://localhost:3000/test-lessons`
+
+---
+
+## 🆘 Problemas?
+
+### Erro: "npm: command not found"
+- Você precisa instalar o Node.js: https://nodejs.org/
+
+### Erro: "Port 3000 is in use"
+- Outro app está usando a porta. O Next.js tentará usar 3001 automaticamente.
+
+### Erro ao instalar dependências
+- Tente: `rm -rf node_modules package-lock.json && npm install`
+
+---
+
+## 📊 Conteúdo do App
+
+- ✅ **30 lições** (5 módulos × 6 lições)
+- ✅ **270+ exercícios** interativos
+- ✅ **4 tipos** de exercícios funcionando
+- ✅ **Sistema de XP** e progressão
+- ✅ **5 corações** (vidas)
+- ✅ **Progresso salvo** no navegador
+
+---
+
+## 🎮 Como Usar
+
+1. Acesse `/learn`
+2. Clique em "Começar Lição" 
+3. Complete os exercícios
+4. Ganhe XP e desbloqueie novas lições!
+
+**Divirta-se aprendendo! 🏥📚**
