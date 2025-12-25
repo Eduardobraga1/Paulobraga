@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import { ProgressProvider } from "@/lib/contexts/ProgressContext";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Paulo Braga - Construção Civil",
-  description: "Paulo Braga - Empresa especializada em construção civil com serviços completos para sua obra. Qualidade e profissionalismo garantidos.",
+  title: "Medical English Learning",
+  description: "Aprenda inglês médico de forma interativa",
 };
 
 export default function RootLayout({
@@ -16,7 +17,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <ProgressProvider>{children}</ProgressProvider>
+      </body>
     </html>
   );
 }
